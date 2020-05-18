@@ -13,9 +13,18 @@
     <!--ヘッダーの記述-->
 <%= render 'layouts/header' %>
     <!--ヘッダーの記述-->
+
     <div class="container">
       <p id="notice"><%= notice %></p> <!--デバイスでnotice設定されているので呼び出してるだけ-->
     </div>
+
+    <% if user_signed_in? %>
+    <div class='row'>
+      <div class='col-xs-8 col-xs-offset-4'>
+        <%= render 'search/form' %>
+      </div>
+    </div>
+    <% end %>
 
     <%= yield %>
 
